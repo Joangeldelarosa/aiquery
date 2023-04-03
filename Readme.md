@@ -43,9 +43,6 @@ const query = new AIQuery(
   client,
   schemas,
   roles,
-  'mongodb',
-  'default',
-  'None'
 )
 
 // Process a natural language query
