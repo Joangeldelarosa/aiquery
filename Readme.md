@@ -45,7 +45,16 @@ const query = new AIQuery(
   roles,
 )
 
-// Process a natural language query
+/* Process a natural language query
+ * @param apiKey - The API key for OpenAI
+ * @param client - A connected MongoClient instance
+ * @param schemas - A JSON object containing the schemas for the database
+ * @param roles - A list of allowed roles
+ * @param apiModel - The API model for OpenAI (default: "text-davinci-003")
+ * @param dbName - The name of the database (default: "default")
+ * @param additionalLogic - Any additional logic to be provided to the AI model (default: "None")
+ * @example const query = new AIQuery(apiKey, client, schemas, ["admin", "user"], "default", "text-davinci-003", "None");
+ */
 const result = await query.processQuery(
   'Find all users with age greater than 20',
   'admin'
