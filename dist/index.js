@@ -130,7 +130,8 @@ Please provide the TypeScript code snippet for the given query and role, and ens
             });
             // Execute the code snippet using the NodeVM instance and wait for the result
             try {
-                const result = yield vm.run(`(async () => { ${codeSnippet} })()`);
+                const createdFunction = yield vm.run(`(async () => { ${codeSnippet} })()`);
+                const result = yield createdFunction();
                 return result;
             }
             catch (error) {
